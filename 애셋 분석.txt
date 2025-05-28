@@ -22,6 +22,12 @@ Roll 동작은 애니메이터 RootMotion 의 이동위치를 이전 프레임�
 
 V Animator Tag Advanced 를 이용하여 애니메이션 NormalziedTime 을 세부적으로 조정 가능
 
+헤드샷 - Spine - Neck - Head 의 VDamageReceiver 를 통해서 구현
+
+래그돌의 지속시간은 vRagdoll - ActivateRagdoll - RagdollStabilizer(2.0f) 에서 찾을 수 있음. Override 해서 2.0f을 변수로 뚫어놔야할듯
+
+LeftArm 과 RightArm 에 무기를 넣어두면 MeleeManager 가 자동으로 참조해서 가져온다.
+
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 ABC 툴킷
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -64,7 +70,7 @@ Game Kit Controller
 
 리지드바디 Velocity 기반
 
-어빌리트 휠을 이용해 정말 다양한 능력들을 쓸 수 있었다. 이것들로만 출시해도 무방할정도.
+어빌리티 휠을 이용해 정말 다양한 능력들을 쓸 수 있었다. 이것들로만 출시해도 무방할정도.
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 미코노트
