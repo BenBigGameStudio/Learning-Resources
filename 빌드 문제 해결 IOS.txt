@@ -1,0 +1,1 @@
+Build 폴더에 Option + 오른쪽 클릭 > 서비스 > 이곳에 터미널 열기 > Pod Install
