@@ -122,5 +122,10 @@ Variables 에 Transform 등을 선언한뒤 Task 노드에 사용할 수 있다.
 
 Pararell : 동시에 Task 실행
 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+ 인컨트롤
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
+바인딩이 없는 게임이라면 간단 구현 포인트로 나쁘지않다.
 
+인풋이 아예 반응이 없는 경우 : Incontrol.IncontrolManager 의 Script Excution Order를 상단으로 올린다.
