@@ -18,6 +18,8 @@
 
 리지드바디 Velocity 기반
 
+DotVector 없다는 문제는 AI 탬플릿 다운로드시 이미 다운된 애셋은 제외하고 다운하여 해결
+
 Roll 동작은 애니메이터 RootMotion 의 이동위치를 이전 프레임과 비교하여 Velocity 형태로 바꿔서 적용해주는것같음
 
 V Animator Tag Advanced 를 이용하여 애니메이션 NormalziedTime 을 세부적으로 조정 가능
