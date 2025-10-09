@@ -1,0 +1,14 @@
+Sub SaveSheetsAsFiles()
+    Dim ws As Worksheet
+    Dim wb As Workbook
+    Dim FilePath As String
+    
+    FilePath = ThisWorkbook.Path & "\"
+
+    For Each ws In ThisWorkbook.Sheets
+        ws.Copy
+        Set wb = ActiveWorkbook
+        wb.SaveAs FilePath & ws.Name & ".xlsx", FileFormat:=51
+        wb.Close SaveChanges:=False
+    Next ws
+End Sub

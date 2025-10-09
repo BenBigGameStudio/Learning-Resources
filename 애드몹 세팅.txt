@@ -1,0 +1,11 @@
+애드몹 홈페이지에서 앱 추가 광고 단위 추가 > 광고 단위 이름 " Reward "
+
+게재 빈도 적절히 설정
+
+앱 설정에서 앱 ID 를 유니티 프로젝트의 AdsManager 에 추가
+
+신규 프로젝트 만들기 > Unity Ads Monetization > Enable Ads > I will use Mediation > 미디에이션 파트너를 Google Admob / Ad Manager 로 설정 > Game Id 와 Placement Id 를 애드몹 미디에이션 그룹 " 입찰 " 광고소스에 추가
+
+애드몹 미디에이션 그룹 " 입찰 " 광고소스에 AppLovin 과 함께 이 SDK 키를 추가: kH5S5ec6H4SCN9pZBHTRlKKSx8FQ9Z0aJmm8s7Z4txkgiEMuRL22DGr3i3k0FDiovXDRvF33TpAEXZW8QSFWCn
+
+개인 정보 보호 및 메시지 > 유럽  규정 > 앱n개 눌러서 방금 만든 앱들 연결
