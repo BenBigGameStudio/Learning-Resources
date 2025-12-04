@@ -1,14 +1,35 @@
-Sub SaveSheetsAsFiles()
+Sub SaveSheetsAsCSVFiles()
     Dim ws As Worksheet
     Dim wb As Workbook
     Dim FilePath As String
     
+    ' 현재 통합 문서가 저장된 경로를 가져옵니다.
     FilePath = ThisWorkbook.Path & "\"
 
+    ' 현재 통합 문서의 각 시트를 반복합니다.
     For Each ws In ThisWorkbook.Sheets
+        ' 현재 시트를 새 통합 문서로 복사합니다.
         ws.Copy
         Set wb = ActiveWorkbook
-        wb.SaveAs FilePath & ws.Name & ".xlsx", FileFormat:=51
+        
+        ' 새 통합 문서를 CSV 파일로 저장합니다.
+        ' FileFormat:=62는 xlCSVUTF8에 해당하며, 한글/특수문자 깨짐을 방지하는 가장 좋은 방법입니다.
+        ' 만약 매크로 실행 시 "잘못된 프로시저 호출 또는 인수입니다." 오류가 발생하면,
+        ' 사용 중인 Excel 버전이 UTF-8 CSV 저장을 지원하지 않는 것이므로,
+        ' FileFormat:=6 (xlCSV) 또는 FileFormat:=24 (xlCSVWindows)로 변경하세요.
+        On Error Resume Next ' 오류 발생 시 다음 코드로 진행
+        wb.SaveAs Filename:=FilePath & ws.Name & ".csv", FileFormat:=62 ' xlCSVUTF8
+        
+        If Err.Number <> 0 Then
+            ' UTF-8 저장이 실패하면 일반 CSV로 다시 시도
+            Err.Clear
+            wb.SaveAs Filename:=FilePath & ws.Name & ".csv", FileFormat:=6 ' xlCSV (기본 시스템 인코딩)
+        End If
+        On Error GoTo 0 ' 오류 트래핑 해제
+        
+        ' 저장 후 새 통합 문서를 닫습니다 (변경 사항은 저장했으므로 저장 안 함).
         wb.Close SaveChanges:=False
     Next ws
+    
+    MsgBox "모든 시트를 CSV 파일로 저장했습니다.", vbInformation
 End Sub
